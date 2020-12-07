@@ -269,8 +269,8 @@ icmp6_neighbor_solicitation_or_advertisement (vlib_main_t * vm,
 		}
 
 	      h0->advertisement_flags = clib_host_to_net_u32
-		(ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_SOLICITED
-		 | ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_OVERRIDE);
+		(ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_ROUTER | ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_SOLICITED |
+     ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_OVERRIDE);
 
 	      h0->icmp.checksum = 0;
 	      h0->icmp.checksum =
