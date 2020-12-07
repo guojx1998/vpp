@@ -217,8 +217,8 @@ vnet_ip6_nd_term (vlib_main_t * vm,
 	  clib_memcpy (opt->ethernet_address, macp, 6);
 	  ndh->icmp.type = ICMP6_neighbor_advertisement;
 	  ndh->advertisement_flags = clib_host_to_net_u32
-	    (ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_SOLICITED |
-	     ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_OVERRIDE);
+	    (ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_ROUTER | ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_SOLICITED |
+     ICMP6_NEIGHBOR_ADVERTISEMENT_FLAG_OVERRIDE);
 	  ndh->icmp.checksum = 0;
 	  ndh->icmp.checksum =
 	    ip6_tcp_udp_icmp_compute_checksum (vm, p0, ip, &bogus_length);
